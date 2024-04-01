@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3 th:text="${msg}"></h3>
+<form action="/submit-otp" method="post">
+
+<label>enter otp:</label>
+<input type="number" name="otp">
+<input type="hidden" name="id" th:value="${id}">
+<button>sumbit</button>
+</form>
+</body>
+</html>

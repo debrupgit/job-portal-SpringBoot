@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="../CSS/signup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Signup to job portal</h2>
+    <form action="/signup" method="post" th:object="${portalUser}">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name"  th:field="*{name}" required placeholder="enter name here">
+        <span th:errors="*{name}"></span>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" th:field="*{email}" required placeholder="enter email here">
+        <span th:errors="*{email}"></span>
+      </div>
+      <div class="input-group">
+        <label for="phone">Phone No.</label>
+        <input type="tel" id="phone" name="mobile" th:field="*{mobile}" required placeholder="enter Ph no. here">
+        <span th:errors="*{mobile}"></span>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" th:field="*{password}" required placeholder="enter password here">
+        <span th:errors="*{password}"></span>
+      </div>
+      <div class="input-group">
+        <label for="cpassword">Confirm Password</label>
+        <input type="password" id="confirm_password" name="" th:field="*{confirm_password}" required placeholder="enter password here">
+        <span th:errors="*{confirm_password}"></span>
+      </div>
+      <div class="input-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob"   th:field="*{dob}" name="dob" required>
+        <span th:errors="*{dob}"></span>
+      </div>
+      <div class="input-group radio-group">
+        <label>Role:</label>
+        <label for="applicant"><input type="radio" id="applicant" name="role" value="applicant" required> Applicant</label>
+        <label for="recruiter"><input type="radio" id="recruiter" name="role" value="recruiter" required> Recruiter</label>
+        <span th:errors="*{role}"></span>
+      </div>
+      <button type="submit" class="btn">Signup</button>
+      <button type="reset" class="btn" id="can">Cancel</button>
+      <p style="color: #fff; text-align: center;">Already have an account? <a href="login.html" style="color: #0ff;">Login here</a></p>
+    </form>
+  </div>
+</body>
+</html>
